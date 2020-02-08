@@ -56,13 +56,17 @@ public class todoTest {
 	//2.sayfanın açıldığı kontrol edilir.
 	public void searchPage2ok()
 	{
-		try {
+		try 
+		{
 			Assert.assertTrue(tarayici.getTitle().equals("B - n11.com - 2/50"));
 	    	System.out.println("2. SAyfa Açıldı !");
-		 }catch(Exception e){
-			 System.out.println("2. Sayfa Görüntülenemed !");
-	     		}
+		}
+		catch(Exception e)
+		{
+			System.out.println("2. Sayfa Görüntülenemed !");
+		}
 	}
+	
 	public void searchProduct()
 	{
 		//ürün arama
@@ -105,8 +109,17 @@ public class todoTest {
 	}
 	*/
 	
-	//---- Ürün sepetten silinerek sepetin boş olduğu kontrol edilir.
-	
+	// Ürün sepetten silinerek sepetin boş olduğu kontrol edilir.
+	public void trashProcess()
+	{
+		// Ürünleri sil
+		tarayici.findElement(By.xpath("//div//span[@class='removeProd svgIcon svgIcon_trash']")).click();
+		System.out.println("Sepetteki ürünler silindi");
+		
+		//boş durumunu görüntüle
+		String sepetDurum = tarayici.findElement(By.xpath("//div[@class='checkoutContainer emptyCartContainer']//div//h2")).getText();
+		System.out.println("Sepet kontrol : " + sepetDurum);
+	}
 	
     //Metodlar
     
