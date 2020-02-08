@@ -20,22 +20,12 @@ public class todoTest {
 	public String geckodriversName="webdriver.gecko.driver";
 	public String gdriversPath="/home/sum/Desktop/SeleniumWebOtomasyon-Testinium/testiniumProjeOdevi/SeleniumTest/drivers/geckodriver/geckodriver";
 	
-
-	
 	public void siteOpen(){
 		System.setProperty(geckodriversName, gdriversPath);
 		//tarayici ac
 		tarayici.manage().window().maximize();
 		//n11.com Sitesi açılır
 		tarayici.get(URL);
-		/*
-		try {
-			Thread.sleep(5000);
-		}
-		catch(InterruptedException e){
-			e.printStackTrace();
-		}
-		tarayici.quit();*/
 	}
 	
 	
@@ -104,10 +94,23 @@ public class todoTest {
 		}
 	}
 	
+	/*
+	//Adet arttırılarak ürün adedinin 2 olduğu doğrulanır.
+	public void countProduct()
+	{
+		//countu arttırma
+		tarayici.findElement(By.xpath("//div//span[@class='spinnerUp spinnerArrow']")).click();
+		String productCount = tarayici.findElement(By.cssSelector("input.quantity")).getAttribute("value");
+		System.out.println("toplam ürün sayısı :" + productCount);
+	}
+	*/
 	
+	//---- Ürün sepetten silinerek sepetin boş olduğu kontrol edilir.
+	
+	
+    //Metodlar
     
-    public void quitDriver(){
-        tarayici.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+	public void quitDriver(){
         tarayici.quit();
     }
     
@@ -120,13 +123,14 @@ public class todoTest {
     	tarayici.findElement(By.xpath(path)).sendKeys(key);
 		
 	}
-	public void checkResults(String path,String searchname) {
-			
-		if(!tarayici.findElement(By.xpath(path)).getText().isEmpty() ) {
+	public void checkResults(String path,String searchname) 
+	{		
+		if(!tarayici.findElement(By.xpath(path)).getText().isEmpty() ) 
+		{
 			System.out.println(searchname+ " sonuç bulundu!");
 		}
 			
-		}
+	}
 	
 	public void checkFav(String path) {
 		
