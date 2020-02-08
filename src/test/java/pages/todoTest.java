@@ -48,7 +48,7 @@ public class todoTest {
 	
 	//Arama sonuçları sayfasından 2.sayfa açılır.
 	public void searchPage2() {
-		btnClick("//a[@href='https://www.n11.com/arama?q=samsung&pg=2']");
+		btnClick("//a[@href='https://www.n11.com/arama?q=bilgisayar&pg=2']");
         System.out.println("2.Sayfa");
 
 	}
@@ -110,7 +110,7 @@ public class todoTest {
 	*/
 	
 	// Ürün sepetten silinerek sepetin boş olduğu kontrol edilir.
-	public void trashProcess()
+	public void removeProduct()
 	{
 		// Ürünleri sil
 		tarayici.findElement(By.xpath("//div//span[@class='removeProd svgIcon svgIcon_trash']")).click();
